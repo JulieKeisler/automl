@@ -22,3 +22,6 @@ def MASE(actual, pred):
     d = np.abs(np.diff(actual)).sum() / (n - 1)
     errors = np.abs(actual, pred).sum()
     return errors / d
+
+def SMAPE(actual, pred):
+    return np.sum(2 * np.abs(actual-pred) / (np.abs(actual) + np.abs(pred))*100) / actual.shape[0]

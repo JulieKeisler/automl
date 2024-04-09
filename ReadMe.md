@@ -36,5 +36,8 @@ The code works with Python version 3.9.18.
 * Add your environment as a jupyter kernel: ```python -m ipykernel install --user --name=new_env```
 (If not already installed by also the previous installation: ```conda install graphviz```)
 
+## Norway use case
+
+The plots for the Norway use case can be recreated using the ```plots_norway.ipynb``` notebook. The necessary data file should be included in the ```dataset/save_norway``` folder.
 
 
