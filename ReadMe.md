@@ -19,3 +19,20 @@ The ```dragon``` folder contains the code from the ```DRAGON``` package that we 
 The ```dataset``` folder contains the data used for our experiments as well as the saved outputs from our baseline.
 
 The ```utils``` folder contains our code. In the ```utils/config.py``` you can find our configurations for our use case: training procedure, features, etc. To incorporate the CNN/MLP model within the SSEA algorithm, please set ```'models' = True``` in the ```steady_state_config``` variable in the ```config.py```.
+
+
+## Installation
+
+The code works with Python version 3.9.18.
+
+* Create a conda (or mamba) environment: ```conda create -n new_env python=3.9.18```
+* Activate the environment: ```conda activate new_env```
+* Install the zellij package using pip (be carefull to use the pip from your conda environment): ```pip install git+https://github.com/ThomasFirmin/zellij.git@dag```
+* Install matplotlib: ```conda install matplotlib```
+* Install AutoPytorch with pip: ```pip install autoPyTorch```
+* Install Ipykernel (for the notebooks): ```conda install -c anaconda ipykernel```
+* Add your environment as a jupyter kernel: ```python -m ipykernel install --user --name=new_env```
+(If not already installed by also the previous installation: ```conda install graphviz```)
+
+
+

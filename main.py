@@ -3,8 +3,8 @@ import pprint
 
 from dragon.utils.tools import set_seed, logger
 
+from main_autopytorch import fit_autopytorch
 from main_energy_dragon import fit_energy_dragon
-#from main_autopytorch import fit_autopytorch
 from utils.config import mh_configs, exp_configs
 
 
@@ -34,8 +34,7 @@ if __name__ == "__main__":
     args = vars(args)
 
     if args['mh'] == 'autopytorch':
-#        fit_autopytorch(args)
-        print('Autopytorch not installed here')
+        fit_autopytorch(args)
     else:
         fit_energy_dragon(args)
 

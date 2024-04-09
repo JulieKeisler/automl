@@ -8,7 +8,6 @@ from torch import nn
 from utils.utils_training import load_model, predict
 from dragon.utils.exceptions import EndOnNan
 from dragon.utils.tools import logger, set_seed
-from timm.utils import ModelEmaV2
 
 from utils.optimizers import configure_optimizers
 
@@ -46,10 +45,6 @@ class Trainer:
         train_loss_fn = self.config["Loss"].to(self.config['Device'])
         val_loss_fn = self.config["Loss"].to(self.config['Device'])
         optimizer, scheduler = configure_optimizers(model, self.config[obj + 'Optimizer'])
-        if ("ModelEmaV2" in self.config) and isinstance(self.config["ModelEmaV2"], dict):
-            model_ema = ModelEmaV2(model, decay=self.config["ModelEmaV2"]["EmaDecayRate"], device=self.config['Device'])
-        else:
-            model_ema = None
         callbacks = self.config[obj + 'Callbacks']
         for cb in callbacks:
             cb.reset()
@@ -106,19 +101,6 @@ class Trainer:
                     if hasattr(cb, "stop_training"):
                         if cb.stop_training:
                             raise InterruptedError
-                if model_ema is not None:
-                    ema_loss = 0
-                    with torch.no_grad():
-                        for batch_idx, (input, target) in enumerate(val_loader):
-                            if isinstance(input, list):
-                                for i in range(len(input)):
-                                    input[i] = input[i].float().to(device)
-                            else:
-                                input = input.float().to(device)
-                            target = target.to(device).float()
-                            pred = model_ema.module(input, mode=mode)
-                            ema_loss += val_loss_fn(pred, target)
-                    ema_loss = ema_loss / len(val_loader)
                 if scheduler is not None:
                     scheduler.step()
         except KeyboardInterrupt:

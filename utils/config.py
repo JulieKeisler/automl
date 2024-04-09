@@ -74,9 +74,6 @@ automl_config = {
         "Scheduler": lambda it: cyclical_lr(it, 10, 200, 0.01),
         "LearningRate": 1,
     },
-    "ModelEmaV2": {
-        "EmaDecayRate": 0.9
-    },
     "Loss": nn.MSELoss(),
     # Prediction
     "OnlinePrediction": False,

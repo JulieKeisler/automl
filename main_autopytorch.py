@@ -19,9 +19,9 @@ def fit_autopytorch(config):
     data_loader = LoadDataLoader(config)
     trainset = data_loader.get_dataset('train', scaler=False)
     testset = data_loader.get_dataset('test', scaler=False)
-    X_train = np.swapaxes(trainset.data_2d, 1, 2).reshape(trainset.data_2d.shape[0]*48, -1)
+    X_train = np.swapaxes(trainset.data_2d, 1, 2).reshape(trainset.data_2d.shape[0]*config['Freq'], -1)
     y_train = trainset.y.reshape(-1,)
-    X_test = np.swapaxes(testset.data_2d, 1, 2).reshape(testset.data_2d.shape[0]*48, -1)
+    X_test = np.swapaxes(testset.data_2d, 1, 2).reshape(testset.data_2d.shape[0]*config['Freq'], -1)
     y_test = testset.y.reshape(-1,)
     logger.info(f"DataLoader created.")
     if os.path.exists(config['SaveDir']):
