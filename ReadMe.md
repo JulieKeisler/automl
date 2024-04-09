@@ -20,6 +20,8 @@ The ```dataset``` folder contains the data used for our experiments as well as t
 
 The ```utils``` folder contains our code. In the ```utils/config.py``` you can find our configurations for our use case: training procedure, features, etc. To incorporate the CNN/MLP model within the SSEA algorithm, please set ```'models' = True``` in the ```steady_state_config``` variable in the ```config.py```.
 
+The experiments have be ran using a bash environment. Two bash files for AutoPytorch ```script_autopytorch.sh``` and for the Dragon optimization ```script_dragon.sh``` can be found in the repository. Yo will need an MPI environment to use the second one.
+
 
 ## Installation
 
