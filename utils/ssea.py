@@ -7,11 +7,11 @@ from dragon.utils.tools import set_seed, logger
 import numpy as np
 import random
 import torch
-from mpi4py import MPI
 
 
 class SteadyStateEA:
     def __init__(self, search_space, n_iterations: int, population_size: int, selection_size: int, evaluation, crossover, config, models, **args):
+        from mpi4py import MPI
         self.search_space=search_space
         self.n_iterations = n_iterations
         self.population_size = population_size

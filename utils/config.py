@@ -1,7 +1,6 @@
-from zellij.strategies.tools.cooling import MulExponential
 from torch import nn
 from dragon.search_algorithm.variation_operators import DAGTwoPoint
-#from utils.ssea import SteadyStateEA
+from utils.ssea import SteadyStateEA
 from utils.callbacks import Checkpoint, EarlyStopping, EndOnNan, TrainingDuration
 from utils.metamodels import LoadForecastingNetwork
 from utils.optimizers import cyclical_lr
@@ -9,7 +8,7 @@ from utils.searchspace import load_search_space
 from utils.metrics import MAPE
 
 steady_state_config = {
-    #"MetaHeuristic": SteadyStateEA,
+    "MetaHeuristic": SteadyStateEA,
     "n_iterations": 4000,
     "population_size": 400,
     "selection_size": 20,
@@ -19,7 +18,7 @@ steady_state_config = {
 }
 
 rs_config = {
-    #"MetaHeuristic": SteadyStateEA,
+    "MetaHeuristic": SteadyStateEA,
     "n_iterations": 4000,
     "population_size": 4000,
     "selection_size": 20,
