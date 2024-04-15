@@ -3,7 +3,7 @@
 This is the code for the paper: *Automated Deep Learning for Load Forecasting*.
 
 
-The data used is stored ins ```dataset/data.csv```. The target is called ```conso_rte```, the other variables are anonymized.
+The data used is stored in ```dataset/data.csv```. The target is called ```conso_rte```, the other variables are anonymized.
 
 The main file is ```main.py```. You can run it with several arguments: 
 * ```filename```: the data to use for your experimentations (here ```dataset/data.csv```)
