@@ -7,6 +7,7 @@ The data used is stored ins ```dataset/data.csv```. The target is called ```cons
 
 The main file is ```main.py```. You can run it with several arguments: 
 * ```filename```: the data to use for your experimentations (here ```dataset/data.csv```)
+* ```config```: name of the configuration dictionary related to the dataset (ie: ```filename```) refered in ```exp_configs``` in ```utils/config.py```
 * ```target```: the target name (here ```conso_rte```)
 * ```mh```: the algorithm to use, autopytorch, random search or evolutionary algorithm
 * ```save_dir```: where to save your experiments results
@@ -34,7 +35,7 @@ The code works with Python version 3.9.18.
 * Install AutoPytorch with pip: ```pip install autoPyTorch```
 * Install Ipykernel (for the notebooks): ```conda install -c anaconda ipykernel```
 * Add your environment as a jupyter kernel: ```python -m ipykernel install --user --name=new_env```
-(If not already installed by also the previous installation: ```conda install graphviz```)
+(If not already installed by also the previous installation: ```conda install -c anaconda python-graphviz```)
 
 ## Norway use case
 
