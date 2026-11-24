@@ -41,4 +41,22 @@ The code works with Python version 3.9.18.
 
 The plots for the Norway use case can be recreated using the ```plots_norway.ipynb``` notebook. The necessary data file should be included in the ```dataset/save_norway``` folder.
 
+## License
 
+Copyright (C) 2024 EDF
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the [LICENSE](LICENSE) file for more details.
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+
+The `dragon/` directory is a copy of
+[DRAGON](https://github.com/JulieKeisler/DRAGON) and remains distributed under
+the CeCILL-C free software license agreement (see
+[dragon/LICENSE.txt](dragon/LICENSE.txt)).
